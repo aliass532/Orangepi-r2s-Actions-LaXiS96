@@ -75,10 +75,12 @@ jobs:
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
-
+           pwd
+           cd openwrt/package && git clone https://github.com/jerrykuku/luci-theme-argon.git
+           pwd
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
-
+           pwd
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
@@ -106,9 +108,7 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
-        cd openwrt/package
-        git clone https://github.com/jerrykuku/luci-theme-argon.git
-        cd ..
+        cd openwrt
         pwd
         ./scripts/feeds update -a
         ./scripts/feeds install -a
