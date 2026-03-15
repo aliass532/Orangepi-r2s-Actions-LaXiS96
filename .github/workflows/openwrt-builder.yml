@@ -121,6 +121,8 @@ jobs:
         # Update and install the feed packages
         go version
         
+        echo 'CONFIG_TCP_CONG_BBR=y' >> target/linux/ky/riscv64/config-6.6
+        echo 'CONFIG_DEFAULT_TCP_CONG="bbr"' >> target/linux/ky/riscv64/config-6.6
         make target/linux/clean
         make target/linux/compile V=s -j$(nproc)
         
