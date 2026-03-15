@@ -22,5 +22,5 @@ echo 'src-git mt5700webui https://github.com/aliass532/mt5700webui-openwrt-serve
 echo 'src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main' >> feeds.conf.default
 echo 'src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main' >> feeds.conf.default
 
-#echo 'CONFIG_TCP_CONG_BBR=y' >> target/linux/ky/riscv64/config-6.6
-#echo 'CONFIG_DEFAULT_TCP_CONG="bbr"' >> target/linux/ky/riscv64/config-6.6
+echo 'CONFIG_TCP_CONG_BBR=y' >> target/linux/ky/riscv64/config-6.6
+echo 'CONFIG_DEFAULT_TCP_CONG="bbr"' >> target/linux/ky/riscv64/config-6.6
