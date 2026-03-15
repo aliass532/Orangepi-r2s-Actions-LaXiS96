@@ -120,7 +120,8 @@ jobs:
         ./scripts/feeds install -a
         # Update and install the feed packages
         go version
-
+        
+        grep -E "bbr|BBR" target/linux/ky/riscv64/config-6.6
         make target/linux/clean
         make target/linux/compile V=s -j$(nproc)
         
