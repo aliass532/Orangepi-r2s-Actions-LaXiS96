@@ -23,3 +23,4 @@ echo 'src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-pass
 echo 'src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main' >> feeds.conf.default
 
 echo 'CONFIG_TCP_CONG_BBR=y' >> target/linux/ky/riscv64/config-6.6
+#echo '# CONFIG_DEFAULT_BBR is not set' >> target/linux/ky/riscv64/config-6.6
