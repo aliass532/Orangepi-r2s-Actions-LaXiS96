@@ -120,9 +120,10 @@ jobs:
         ./scripts/feeds install -a
         # Update and install the feed packages
         go version
-
-        cat  target/linux/ky/riscv64/config-6.6 |grep "BBR"
-        cat  target/linux/ky/riscv64/config-6.6 |grep "bbr"
+        
+        pwd
+        ll target/linux/ky/riscv64/config-6.6
+        ll target/linux/ky/riscv64/*
         
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s       
