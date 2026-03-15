@@ -122,8 +122,8 @@ jobs:
         go version
         
         pwd
-        grep -q "BBR" target/linux/ky/riscv64/config-6.6 && echo "Found BBR" || echo "BBR not found"
-        grep -q "bbr" target/linux/ky/riscv64/config-6.6 && echo "Found bbr" || echo "bbr not found"
+        grep "BBR" ./target/linux/ky/riscv64/config-6.6 || true
+        grep "bbr" ./target/linux/ky/riscv64/config-6.6 || true
         
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s       
