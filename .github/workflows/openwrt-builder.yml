@@ -122,7 +122,7 @@ jobs:
         echo "CONFIG_NET_SCH_FQ=y" >> target/linux/generic/config-6.6
         echo "CONFIG_NET_SCH_FQ_CODEL=y" >> target/linux/generic/config-6.6
 
-        echo "CONFIG_TCP_CONG_BBR=y" >> target/linux/riscv64/config-6.6
+        echo "CONFIG_TCP_CONG_BBR=y" >> target/linux/ky/riscv64/config-6.6
         echo "CONFIG_NET_SCH_FQ=y" >>   target/linux/ky/riscv64/config-6.6
         echo "CONFIG_NET_SCH_FQ_CODEL=y" >>   target/linux/ky/riscv64/config-6.6
         
