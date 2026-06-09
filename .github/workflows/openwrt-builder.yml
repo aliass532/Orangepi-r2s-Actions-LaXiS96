@@ -91,7 +91,7 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        rm -rf target/linux/ky/
+        rm -rf openwrt/target/linux/ky/
         [ -d $KERNEL_FILE ] && mv $KERNEL_FILE openwrt/target/linux/
         chmod +x $DIY_P2_SH
         cd openwrt
