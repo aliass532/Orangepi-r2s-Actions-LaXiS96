@@ -56,10 +56,12 @@ jobs:
         sudo tar -C /opt/ -xzf go1.24.13.linux-amd64.tar.gz
         sudo ln -sf /opt/go/bin/go /usr/bin/go
         go version
+        
         wget https://cmake.org/files/v3.31/cmake-3.31.0-linux-x86_64.tar.gz
         sudo tar -zxvf cmake-3.31.0-linux-x86_64.tar.gz -C /opt/
         sudo ln -sf /opt/cmake-3.31.0-linux-x86_64/bin/cmake /usr/bin/cmake
         /usr/bin/cmake --version
+        
         echo "========== CPU信息 =========="
         lscpu | grep -E "Model name|Core|CPU\(s\)"
         echo -e "\n========== 内存信息 =========="
