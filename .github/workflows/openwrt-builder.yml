@@ -50,8 +50,8 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /mnt/workdir
         sudo chown $USER:$GROUPS /mnt/workdir
-        sudo apt remove -y golang-go
-        sudo rm -rf /usr/local/go
+        sudo apt remove -y golang*
+        sudo rm -rf /usr/bin/go
         wget https://dl.google.com/go/go1.24.13.linux-amd64.tar.gz
         sudo tar -C /usr/local -xzf go1.24.13.linux-amd64.tar.gz
         echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
@@ -130,6 +130,7 @@ jobs:
         wget https://cmake.org/files/v3.31/cmake-3.31.0-linux-x86_64.tar.gz
         sudo tar -zxvf cmake-3.31.0-linux-x86_64.tar.gz -C /opt/
         sudo ln -sf /opt/cmake-3.31.0-linux-x86_64/bin/cmake /usr/bin/cmake
+        ll staging_dir/host/bin/cmake
         # 备份旧cmake
         mv staging_dir/host/bin/cmake staging_dir/host/bin/cmake.old
         # 软链接使用系统高版本cmake
