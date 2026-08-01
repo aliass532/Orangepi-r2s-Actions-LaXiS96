@@ -28,16 +28,14 @@ mv staging_dir/host/bin/cmake staging_dir/host/bin/cmake.old
 # 软链接使用系统高版本cmake
 ln -s /usr/bin/cmake staging_dir/host/bin/cmake
 
-# 验证
-./staging_dir/host/bin/cmake --version
-
 wget https://cmake.org/files/v3.31/cmake-3.31.0-linux-x86_64.tar.gz
 sudo tar -zxvf cmake-3.31.0-linux-x86_64.tar.gz -C /opt/
 sudo ln -sf /opt/cmake-3.31.0-linux-x86_64/bin/cmake /usr/bin/cmake
+# 验证
+./staging_dir/host/bin/cmake --version
 
 # 克隆到 OpenWrt packages 目录
 git clone https://github.com/kenzok78/luci-theme-atmaterial_new.git
-
 # 移动到 packages 目录
 mv luci-theme-atmaterial_new ./package/feeds/luci/
 
