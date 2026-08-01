@@ -59,6 +59,10 @@ jobs:
         echo 'export PATH=$GOROOT/bin:$GOPATH/bin:$PATH' >> ~/.bashrc
         source ~/.bashrc
         go version
+        wget https://cmake.org/files/v3.31/cmake-3.31.0-linux-x86_64.tar.gz
+        sudo tar -zxvf cmake-3.31.0-linux-x86_64.tar.gz -C /opt/
+        sudo ln -sf /opt/cmake-3.31.0-linux-x86_64/bin/cmake /usr/bin/cmake
+        /usr/bin/cmake --version
         echo "========== CPU信息 =========="
         lscpu | grep -E "Model name|Core|CPU\(s\)"
         echo -e "\n========== 内存信息 =========="
@@ -126,16 +130,7 @@ jobs:
       id: compile
       run: |
         cd openwrt
-        pwd
-        wget https://cmake.org/files/v3.31/cmake-3.31.0-linux-x86_64.tar.gz
-        sudo tar -zxvf cmake-3.31.0-linux-x86_64.tar.gz -C /opt/
-        sudo ln -sf /opt/cmake-3.31.0-linux-x86_64/bin/cmake /usr/bin/cmake
-        ll staging_dir/host/bin/cmake
-        # 备份旧cmake
-        mv staging_dir/host/bin/cmake staging_dir/host/bin/cmake.old
-        # 软链接使用系统高版本cmake
-        ln -s /usr/bin/cmake staging_dir/host/bin/cmake
-        
+        pwd      
         #./scripts/feeds update -a
         #./scripts/feeds install -a
         # Update and install the feed packages
