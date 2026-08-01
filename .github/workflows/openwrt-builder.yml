@@ -118,6 +118,14 @@ jobs:
       run: |
         cd openwrt
         pwd
+        wget https://cmake.org/files/v3.31/cmake-3.31.0-linux-x86_64.tar.gz
+        sudo tar -zxvf cmake-3.31.0-linux-x86_64.tar.gz -C /opt/
+        sudo ln -sf /opt/cmake-3.31.0-linux-x86_64/bin/cmake /usr/bin/cmake
+        # 备份旧cmake
+        mv staging_dir/host/bin/cmake staging_dir/host/bin/cmake.old
+        # 软链接使用系统高版本cmake
+        ln -s /usr/bin/cmake staging_dir/host/bin/cmake
+        
         #./scripts/feeds update -a
         #./scripts/feeds install -a
         # Update and install the feed packages
